@@ -5,14 +5,12 @@ my @list;
 my @word;
 my @tword;
 
-open DICT,"dic";
+open my $dict, '<', 'dic';
 
-while (<DICT>)
+while (<$dict>)
 {
 	push(@list,$_);
 }
-
-close DICT;
 
 my $word = $list[int(rand(@list))];
 
